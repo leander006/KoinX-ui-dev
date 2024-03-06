@@ -1,17 +1,24 @@
+
 import React, { useEffect, useRef, memo } from 'react';
 
 const TradingViewWidget: React.FC = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!container.current) return;
+
     const script = document.createElement("script");
     script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
     script.type = "text/javascript";
     script.async = true;
+    const deviceWidth = window.innerWidth;
+
+    const height = deviceWidth >= 768 ? 410 : 310;
     script.innerHTML = `
       {
+        "height": ${height},
         "symbol": "NASDAQ:AAPL",
-        "interval": "D",
+        "interval": "W",
         "timezone": "Etc/UTC",
         "theme": "light",
         "style": "3",
@@ -22,36 +29,23 @@ const TradingViewWidget: React.FC = () => {
         "save_image": false,
         "calendar": false,
         "hide_volume": true,
-        "support_host": "https://www.tradingview.com"
+        "support_host": ""
       }`;
-    container.current?.appendChild(script);
+    container.current.appendChild(script);
 
-    const resizeObserver = new ResizeObserver(entries => {
-      if (entries && entries.length > 0) {
-        const entry = entries[0];
-        const { height } = entry.contentRect;
-        container.current?.querySelector('.tradingview-widget-container__widget')?.setAttribute('style', `height: ${height - 32}px`);
+    return () => {
+      if (container.current) {
+        container.current.removeChild(script);
       }
-    });
-
+    };
   }, []);
 
   return (
-    <div className='h-full py-4'>
-
-          {/* <div className='pb-12'>
-            <h1>Bitcoin Price Chart (USD)</h1>
-            <div>
-                  
-            </div>
-          </div> */}
-          <div className="tradingview-widget-container" ref={container} style={{ height: "20%", width: "100%" }}>
-            {/* <div className="tradingview-widget-container__widget" style={{ height: "calc(100% - 32px)", width: "100%" }}>
-            </div> */}
-         </div>
+    <div className="tradingview-widget-container" ref={container}>
+      <div className="tradingview-widget-container__widget"></div>
     </div>
-
   );
 }
 
 export default memo(TradingViewWidget);
+
