@@ -1,18 +1,33 @@
 "use client"
 
-import { usePathname } from 'next/navigation'
 
-export default async function Coin() {
+import { usePathname ,useRouter} from "next/navigation";
+import TradingViewWidget from "@/components/MainComponent/TradingViewWidget";
+import AdComponent from "@/components/SideCompents/AdComponent";
+import TrendingComponent from "@/components/SideCompents/TrendingComponent";
+import InfoComponent from "@/components/MainComponent/InfoComponent";
+
+
+export default function Home() {
+
   const pathname = usePathname()
-  console.log(pathname);
-  
-    
-      return (
-        <div className="flex flex-col justify-center h-screen">
-            <div className="flex justify-center">
 
+
+  return (
+    <div className="flex flex-col lg:flex-row pt-24 w-screen px-12 ">
+        
+
+        <div className="lg:w-[70%] mr-4 h-full">
+              <InfoComponent/>
+              <div className= "h-[460px] px-6 border-none bg-white">
+                  <TradingViewWidget/>
             </div>
         </div>
-      );
-    }
-    
+        
+        <div className="lg:w-[30%]">
+              <AdComponent/>
+              <TrendingComponent/>
+        </div>
+    </div>
+  );
+}
