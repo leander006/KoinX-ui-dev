@@ -1,11 +1,10 @@
 "use client"
 
+import React, { useEffect, useRef, memo} from 'react';
 
-import React, { useEffect, useRef, memo } from 'react';
 
 const TradingViewWidget: React.FC = () => {
   const container = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (!container.current) return;
 
@@ -19,8 +18,8 @@ const TradingViewWidget: React.FC = () => {
     script.innerHTML = `
       {
         "height": ${height},
-        "symbol": "BITSTAMP:ETHUSD",
-        "interval": "D",
+        "symbol": "BITSTAMP:BTCUSD",
+        "interval": "M",
         "timezone": "Asia/Kolkata",
         "theme": "light",
         "style": "3",
