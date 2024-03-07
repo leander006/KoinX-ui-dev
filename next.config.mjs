@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/bitcion",
+        destination: "/bitcoin",
         permanent: true,
       },
     ];

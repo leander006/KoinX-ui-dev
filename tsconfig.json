@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/MainComponent/SubComponent/Tokenomics.jsx", "components/Footer/Growth.jsx", "components/Footer/InfoCard.jsx", "components/Footer/Footer.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/MainComponent/SubComponent/Tokenomics.jsx", "components/Footer/Growth.jsx", "components/Footer/InfoCard.jsx", "components/Footer/Footer.jsx", "components/MainComponent/SubComponent/SentimentCard.jsx"],
   "exclude": ["node_modules"]
 }

@@ -3,7 +3,7 @@ import Image from "next/image"
 
 
 function TeamCardComponent(data:any) {
-      console.log(data);
+      // console.log(data);
   return (
     <div className="bg-[#E8F4FD] flex flex-col md:flex-row md:items-center px-2 md:px-6 py-3 rounded-[7.46px]">
             <div className="flex flex-col items-center whitespace-nowrap">

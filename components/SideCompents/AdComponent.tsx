@@ -19,9 +19,9 @@ function AdComponent() {
             </div>
             
             <div className='flex justify-center items-center'>
-                  <div className='flex items-center justify-center rounded-[8px] bg-white  text-black py-3 px-2 cursor-pointer'>
+                  <div className='flex items-center justify-center rounded-[8px] bg-white  text-black py-3  md:px-2 cursor-pointer'>
                         <h1 className=''>Get Started for FREE</h1>
-                        <Image className='w-[15px] h-[15px] ml-3'  src={arrow} alt='frame.png'/>
+                        <Image className='w-[15px] h-[15px] mx-[2.1px] md:ml-3'  src={arrow} alt='frame.png'/>
                   </div>   
             </div>
 

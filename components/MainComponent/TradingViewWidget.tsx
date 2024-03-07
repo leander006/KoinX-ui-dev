@@ -1,3 +1,5 @@
+"use client"
+
 
 import React, { useEffect, useRef, memo } from 'react';
 
@@ -17,9 +19,9 @@ const TradingViewWidget: React.FC = () => {
     script.innerHTML = `
       {
         "height": ${height},
-        "symbol": "NASDAQ:AAPL",
-        "interval": "W",
-        "timezone": "Etc/UTC",
+        "symbol": "BITSTAMP:ETHUSD",
+        "interval": "D",
+        "timezone": "Asia/Kolkata",
         "theme": "light",
         "style": "3",
         "locale": "en",

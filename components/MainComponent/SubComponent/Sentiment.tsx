@@ -1,13 +1,38 @@
+"use client"
 
 import Image from "next/image"
 import fundamental from "@/public/fundamentals.png"
-
-import { Carousel, Progress } from "@material-tailwind/react";
 import SentimentCard from "@/components/MainComponent/SubComponent/SentimentCard";
 import sent1 from "@/public/senti1.png"
+import sent2 from "@/public/senti2.png"
+import { SampleNextArrow, SamplePrevArrow } from "@/utlis/getInfo";
+import Slider from "react-slick";
+import { useEffect, useState } from "react";
 
 
 function Sentiment() {
+
+      const [num, setTnum] = useState<any>()
+      useEffect(() => {
+            const deviceWidth = window.innerWidth;
+
+            const height = deviceWidth >= 768 ? 2 : 1;
+            setTnum(height)
+      }, [num])
+            
+      const settings = {
+            dots: true,
+            dotsClass: "slick-dots slick-thumb",
+            infinite: true,
+            speed: 500,
+            slidesToShow: num,
+            slidesToScroll: 1,
+            nextArrow: <SampleNextArrow />,
+            prevArrow: <SamplePrevArrow/>,                        
+          };
+  
+          
+
   return (
       <div className="h-full">
       <h1 className="mb-6 text-[#0F1629] text-3xl">Sentiment</h1>
@@ -15,18 +40,17 @@ function Sentiment() {
             <h1 className="text-[#0F1629] mr-3 text-xl">Key Events</h1>
             <Image className="w-4 h-4 rounded-full" src={fundamental} alt="fundamental" />
       </div>
+    <div className="rounded-[8px]">
+            <Slider className="space-x-4 mx-3" {...settings}>
+                  <SentimentCard id={1} img={sent1}/>
+                  <SentimentCard id={2} img={sent2}/>
+                  <SentimentCard id={1} img={sent1}/>
+                  <SentimentCard id={2} img={sent2}/>
+            </Slider>
+    </div>
 
 
-      <Carousel placeholder={"caro"} className="rounded-xl">
-
-                  <SentimentCard id img={sent1}/>
-                  <SentimentCard img={sent1}/>
-                  <SentimentCard img={sent1}/>
-                  <SentimentCard img={sent1}/>
-
-
-                  
-    </Carousel>
+      
     <div className="flex items-center mb-6">
             <h1 className="text-[#0F1629] mr-3 text-xl my-6">Analyst Estimates</h1>
             <Image className="w-4 h-4 rounded-full" src={fundamental} alt="fundamental" />

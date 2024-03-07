@@ -1,7 +1,13 @@
 
 import Image from "next/image"
 import fundamental from "@/public/fundamentals.png"
+import { useSelector } from "react-redux"
+import { RootState } from "@/redux/store"
 function Fundamentals() {
+
+        const main = useSelector((state: RootState) => state.mainPagedata.data)
+
+
   return (
     <div className="h-full my-6">
       <div className="flex items-center mb-6">
@@ -12,12 +18,12 @@ function Fundamentals() {
       <div className="flex lg:flex-row flex-col justify-between lg:space-x-20"> 
             <div className="lg:w-[50%]">
                   <div className="flex items-center justify-between py-4 mb-4 border-b-[2.2px] border-x-0 border-t-0">
-                          <h1 className="text-[#768396]">Bitcoin Price</h1>
+                          <h1 className="text-[#768396]">{main?.name} Price</h1>
                           <h1>$16,815.46</h1>
                   </div>
                   <div className="flex items-center justify-between py-4 mb-4 border-b-[2.2px] border-x-0 border-t-0">
                           <h1 className="text-[#768396]">24h Low / 24h High</h1>
-                          <h1>$16,382.07 / $16,874.12</h1>
+                          <h1>${main?.market_data?.low_24h?.usd.toLocaleString('en-US')} / ${main?.market_data?.high_24h?.usd.toLocaleString('en-US')}</h1>
                   </div>
                   <div className="flex items-center justify-between py-4 mb-4 border-b-[2.2px] border-x-0 border-t-0">
                           <h1 className="text-[#768396]">7d Low / 7d High</h1>
@@ -29,7 +35,7 @@ function Fundamentals() {
                   </div>
                   <div className="flex items-center justify-between py-4 mb-4 border-b-[2.2px] border-x-0 border-t-0">
                           <h1 className="text-[#768396]">Market Cap Rank</h1>
-                          <h1>#1</h1>
+                          <h1>#{main?.market_cap_rank}</h1>
                   </div>
                   
             </div>
