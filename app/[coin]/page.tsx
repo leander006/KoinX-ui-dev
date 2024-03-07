@@ -11,7 +11,6 @@ import Footer from "@/components/Footer/Footer";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { toast } from 'react-hot-toast';
-import {Spinner} from "@nextui-org/react";
 import type { RootState } from '@/redux/store'
 import ClipLoader from "react-spinners/ClipLoader";
 import { fetchDataMainFailure, fetchDataMainStart, fetchDataMainSuccess } from "@/redux/slice/mainPageSlice";
@@ -73,7 +72,20 @@ export default function Home() {
           </div>
           <div className=" md:mr-4 h-full bg-white rounded-[8px] lg:rounded-t-none pb-4">
                 <InfoBar/>
-                <div className="lg:mx-12 ">
+                <div className="mx-6 lg:mx-6 text-xs md:text-lg">
+                    <div className="flex flex-col md:flex-row justify-between">
+                          <h1 className="font-bold mb-6">{main?.name}  Price chart(USD)</h1>
+                          <div className="flex space-x-2.5 md:space-x-0 mb-3 md:mb-0 md:justify-between md:w-[45%] xl:w-[35%]">
+                                <div className="text-gray-400">1H</div>
+                                <div className="text-gray-400 ">24H</div>
+                                <div className="text-gray-400">7D</div>
+                                <div className="text-[#0141CF] h-fit rounded-lg p-0.5 bg-[#E2ECFE]">1M</div>
+                                <div className="text-gray-400">3M</div>
+                                <div className="text-gray-400">6M</div>
+                                <div className="text-gray-400">1Y</div>
+                                <div className="text-gray-400">ALL</div>
+                          </div>
+                    </div>
                     <TradingViewWidget/>
                 </div>
           </div>

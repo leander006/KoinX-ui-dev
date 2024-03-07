@@ -1,6 +1,5 @@
-"use client"
 
-import React, { useState } from 'react'
+import React from 'react'
 import OverView from './OverView'
 import Fundamentals from './Fundamentals'
 import Sentiment from './Sentiment'
@@ -12,7 +11,7 @@ import { Link } from 'react-scroll';
 
 function InfoHeader() {
 
-  const [vis, setVis] = useState()
+
 
 
 

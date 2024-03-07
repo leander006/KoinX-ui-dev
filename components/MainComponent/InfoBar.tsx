@@ -11,13 +11,11 @@ function InfoBar() {
           <div className="flex items-center whitespace-nowrap mb-2">
                 <h1 className="text-lg md:text-3xl mr-6">$ {main?.market_data?.current_price?.usd.toLocaleString('en-US')}</h1>
                 <PriceChange data={main?.market_data?.price_change_percentage_24h}/>
-                <h1 className="text-gray-400 ml-3">(24h)</h1>
+                <h1 className="text-gray-500 ml-3">(24h)</h1>
           </div>
-    <div className="border border-x-0 border-t-0  pb-[35px]">
-          <h1> ₹ {main?.market_data?.current_price?.inr.toLocaleString('en-US')}</h1>
-    </div>
-
-
+          <div className="border border-x-0 border-t-0  pb-[35px]">
+                <h1> ₹ {main?.market_data?.current_price?.inr.toLocaleString('en-US')}</h1>
+          </div>
     </div>
   )
 }
