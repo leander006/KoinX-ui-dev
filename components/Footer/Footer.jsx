@@ -36,7 +36,7 @@ function Footer({no}){
   return (
     <div className="w-full bg-white lg:px-12 lg:py-16">
           <div className="w-full xl:space-x-16">
-                <h1 className="font-bold text-2xl">You May Also Like</h1>
+                <h1 className="font-bold text-md md:text-2xl">You May Also Like</h1>
                 <div className="my-6 ">
                 <Slider {...settings}>
                   {trend?.coins.map((m) =>(
@@ -46,7 +46,7 @@ function Footer({no}){
                 </div>
           </div>
           <div className="w-full xl:space-x-16">
-                <h1 className="font-bold text-2xl">Trending Coins</h1>
+                <h1 className="font-bold text-md md:text-2xl">Trending Coins</h1>
                 <div className="my-6">
                 <Slider {...settings}>
                   {trend?.coins.map((m) =>(

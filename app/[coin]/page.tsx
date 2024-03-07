@@ -58,12 +58,12 @@ export default function Home() {
       <div className="flex flex-col lg:flex-row w-screen px-6 lg:px-12">
 
         {loading ?<div className="lg:w-[70%] flex flex-col">
-              <div className="flex space-x-8 p-6 mr-4 lg:bg-white lg:rounded-[8px] lg:rounded-b-none rounded-none">
+              <div className="flex space-x-8 p-6 whitespace-nowrap mr-4 lg:bg-white lg:rounded-[8px] lg:rounded-b-none rounded-none">
                       <div className="flex space-x-2 items-center">
                       {/* // eslint-disable-next-line */}
                         <img src={main?.image?.thumb} alt="mainLogo" />
-                            <h1 className="text-lg">{main?.name}</h1>
-                            <h3 className="text-xs">{main?.symbol}</h3>
+                            <h1 className="text-lg capitalize">{main?.name}</h1>
+                            <h3 className="text-sm capitalize">{main?.symbol}</h3>
                       </div>
                       <div className="bg-gray-500 p-3 text-white w-fit rounded-[8px] ">
                             Rank #{main?.market_cap_rank}
@@ -87,7 +87,7 @@ export default function Home() {
         }
 
         
-        <div className="lg:w-[30%]">
+        <div className=" lg:w-[30%]">
               <AdComponent/>
               <TrendingComponent/>
         </div>

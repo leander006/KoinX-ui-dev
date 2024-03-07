@@ -27,8 +27,8 @@ function TrendingComponent() {
         getData()
       }, [])
   return (
-    <div className="flex flex-col rounded-[8px] bg-white mt-4 p-4">
-            <h1 className="font-bold text-lg mb-4">Trending Coins (24h)</h1>
+    <div className="flex flex-col rounded-[8px] bg-white mt-4 p-4 ">
+            <h1 className="font-bold text-sm md:text-lg mb-4">Trending Coins (24h)</h1>
             <div className="space-y-6">
               {trend?.coins?.slice(0,3).map((c:any) =>(
                     <TrendingCards key={c.id} data={c} />

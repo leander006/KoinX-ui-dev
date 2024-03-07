@@ -35,13 +35,13 @@ function Sentiment() {
 
   return (
       <div className="h-full">
-      <h1 className="mb-6 text-[#0F1629] text-3xl">Sentiment</h1>
+      <h1 className="mb-6 text-[#0F1629] text-lg md:text-3xl">Sentiment</h1>
       <div className="flex items-center mb-6">
-            <h1 className="text-[#0F1629] mr-3 text-xl">Key Events</h1>
+            <h1 className="text-[#0F1629] mr-3 text-sm md:text-xl">Key Events</h1>
             <Image className="w-4 h-4 rounded-full" src={fundamental} alt="fundamental" />
       </div>
     <div className="rounded-[8px]">
-            <Slider className="space-x-4 mx-3" {...settings}>
+            <Slider className="md:space-x-4 md:mx-3" {...settings}>
                   <SentimentCard id={1} img={sent1}/>
                   <SentimentCard id={2} img={sent2}/>
                   <SentimentCard id={1} img={sent1}/>
@@ -52,7 +52,7 @@ function Sentiment() {
 
       
     <div className="flex items-center mb-6">
-            <h1 className="text-[#0F1629] mr-3 text-xl my-6">Analyst Estimates</h1>
+            <h1 className="text-[#0F1629] mr-3 text-sm md:text-xl my-6">Analyst Estimates</h1>
             <Image className="w-4 h-4 rounded-full" src={fundamental} alt="fundamental" />
       </div>
 
@@ -62,7 +62,7 @@ function Sentiment() {
                   <h1 className="text-[#0FBA83] text-2xl">76%</h1>
             </div>
 
-            <div className="text-[#7C7E8C] w-full space-y-4 ml-4" >
+            <div className="text-[#7C7E8C] w-full space-y-4 ml-4 text-sm md:text-xl" >
                   <div className="flex items-center">
                         <h1>Buy</h1>
                         <div className="w-full brounded-full h-2.5 ml-4 flex items-center">

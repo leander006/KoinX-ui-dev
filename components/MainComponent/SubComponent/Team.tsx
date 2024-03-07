@@ -24,9 +24,9 @@ function Team() {
   return (
 
       <div>
-            <div className="text-black text-2xl font-bold mb-4">Team</div>
+            <div className="text-black text-md md:text-2xl font-bold mb-4">Team</div>
 
-            <div>
+            <div className="text-sm md:text-lg">
                   <p>Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium quam. Facilisis purus convallis quam augue.</p>
             </div>
 

@@ -48,14 +48,15 @@ export function getNum(data:string) {
 const regex = /<sub\s*title="([^"]*)"\s*>/;
 const hasSubTag = data.includes('<sub');
 
-let extractedValue = null;
+
+let extractedValue =data;
 if (hasSubTag) {
   const match = data.match(regex);
   if (match && match.length > 1) {
     extractedValue = "$"+match[1];
   }
-}else{
-  extractedValue = data
 }
+
+
   return extractedValue 
 }  
