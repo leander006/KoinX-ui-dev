@@ -17,3 +17,27 @@ export async function getUserDetails() {
         console.log(e);
       }
     }
+
+
+
+ export function SampleNextArrow(props:any) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", borderRadius:"32px", background: "black"  }}
+        onClick={onClick}
+      />
+    );
+  }
+  
+  export function SamplePrevArrow(props:any) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block",borderRadius:"32px", background: "black" }}
+        onClick={onClick}
+      />
+    );
+  }

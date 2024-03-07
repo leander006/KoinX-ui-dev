@@ -11,6 +11,7 @@
   "dependencies": {
     "@material-tailwind/react": "^2.1.9",
     "axios": "^1.6.7",
+    "chart.js": "^2.9.4",
     "next": "14.1.2",
     "react": "^18",
     "react-dom": "^18",
@@ -19,6 +20,7 @@
     "swiper": "^11.0.7"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.9.41",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

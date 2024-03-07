@@ -9,6 +9,8 @@ import InfoBar from "@/components/MainComponent/InfoBar";
 import Image from "next/image"
 import image from "@/public/image.png"
 import InfoHeader from "@/components/MainComponent/SubComponent/InfoHeader";
+import Footer from "@/components/Footer/Footer";
+
 
 export default function Home() {
 
@@ -16,7 +18,8 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-col lg:flex-row pt-24 w-screen px-6 lg:px-12">
+    <>    
+      <div className="flex flex-col lg:flex-row pt-24 w-screen px-6 lg:px-12">
         
 
         <div className="lg:w-[70%] flex flex-col">
@@ -48,6 +51,13 @@ export default function Home() {
               <AdComponent/>
               <TrendingComponent/>
         </div>
-    </div>
+
+      </div>
+
+        <div className="hidden lg:flex">
+            <Footer no={5}/>
+        </div>
+    </>
+
   );
 }

@@ -2,6 +2,9 @@ import React from 'react'
 import OverView from './OverView'
 import Fundamentals from './Fundamentals'
 import Sentiment from './Sentiment'
+import About from './About'
+import Tokenomics from './Tokenomics'
+import Team from './Team'
 
 function InfoHeader() {
   return (
@@ -26,11 +29,20 @@ function InfoHeader() {
 
 
           <div className='bg-white rounded-[8px] p-6 mt-6'>
-            
             <Sentiment/>
           </div>
 
+          <div className='bg-white rounded-[8px] p-6 mt-6'>
+            <About/>
+          </div>
 
+          <div className='hidden lg:flex flex-col bg-white rounded-[8px] p-6 mt-6'>
+            <Tokenomics/>
+          </div>
+
+          <div className='bg-white rounded-[8px] p-6 mt-6'>
+            <Team/>
+          </div>
     </div>
   )
 }
